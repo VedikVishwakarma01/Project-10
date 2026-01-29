@@ -15,7 +15,10 @@ public class TestCtl {
 	public ORSResponse add() {
 		
 		ORSResponse res = new ORSResponse();
-		
+		res.addMessage("chal gayaaa!!!....");
+		res.addData("42*10 = " + 42*10);
+		res.addInputError("error kyaa hai??.....");
+		res.addResult("huh??", "result pata nhi!!.....");
 		
 		return res;
 	}
