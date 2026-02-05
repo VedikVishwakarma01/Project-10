@@ -138,7 +138,11 @@ public class BaseCtl <F extends BaseForm, T extends BaseDTO, S extends BaseServi
 				res.addMessage("Record not found..!!");
 			} else {
 				res.setSuccess(true);
-				res.addMessage("Records Deleted Successfully");
+				if(ids.length == 1) {
+					res.addMessage("Record deleted successfully");
+				}else {
+					res.addMessage("Records deleted successfully");
+				}
 				res.addData(list);
 				res.addResult("nextListSize", nextList.size());
 			}
@@ -154,6 +158,7 @@ public class BaseCtl <F extends BaseForm, T extends BaseDTO, S extends BaseServi
 
 		pageNo = (pageNo < 0) ? 0 : pageNo;
 
+		@SuppressWarnings("unchecked")
 		T dto = (T) form.getDto();
 
 		ORSResponse res = new ORSResponse(true);

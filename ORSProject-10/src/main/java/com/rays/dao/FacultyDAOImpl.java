@@ -55,12 +55,12 @@ public class FacultyDAOImpl extends BaseDAOImpl<FacultyDTO> implements FacultyDA
 	protected List<Predicate> getWhereClause(FacultyDTO dto, CriteriaBuilder builder, Root<FacultyDTO> qRoot) {
 
 		List<Predicate> whereCondition = new ArrayList<Predicate>();
-		
+
 		if (!isEmptyString(dto.getFirstName())) {
 
 			whereCondition.add(builder.like(qRoot.get("firstName"), dto.getFirstName() + "%"));
 		}
-		
+
 		if (!isEmptyString(dto.getEmail())) {
 
 			whereCondition.add(builder.like(qRoot.get("email"), dto.getEmail() + "%"));
